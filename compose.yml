@@ -1,0 +1,30 @@
+services:
+  web-app:
+    image: matheuspieropan/proposta-web:latest
+    ports:
+      - '80:80'
+    networks:
+      app-network:
+  postgres:
+    image: 'postgres:latest'
+    environment:
+      - 'POSTGRES_DB=proposal'
+      - 'POSTGRES_PASSWORD=postgres'
+      - 'POSTGRES_USER=postgres'
+    ports:
+      - '5432:5432'
+    networks:
+      app-network:
+  rabbitmq:
+    image: 'rabbitmq:latest'
+    environment:
+      - 'RABBITMQ_DEFAULT_PASS=secret'
+      - 'RABBITMQ_DEFAULT_USER=myuser'
+    ports:
+      - '5672:5672'
+    networks:
+      app-network:
+
+networks:
+  app-network:
+    driver: bridge
