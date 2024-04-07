@@ -16,12 +16,13 @@ services:
     networks:
       app-network:
   rabbitmq:
-    image: 'rabbitmq:latest'
+    image: 'rabbitmq:3-management'
     environment:
-      - 'RABBITMQ_DEFAULT_PASS=secret'
-      - 'RABBITMQ_DEFAULT_USER=myuser'
+      - 'RABBITMQ_DEFAULT_PASS=rabbitmq'
+      - 'RABBITMQ_DEFAULT_USER=rabbitmq'
     ports:
       - '5672:5672'
+      - '15672:15672'
     networks:
       app-network:
 

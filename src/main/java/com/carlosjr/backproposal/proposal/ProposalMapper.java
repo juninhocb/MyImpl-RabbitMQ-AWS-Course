@@ -19,5 +19,6 @@ interface ProposalMapper {
     @Mapping(target = "user.phone", source = "phone")
     @Mapping(target = "user.rent", source = "rent")
     @Mapping(target = "id", ignore = true)
+    @Mapping(target = "integrated", constant = "true")
     Proposal dtoToEntity(ProposalDto proposalDto);
 }

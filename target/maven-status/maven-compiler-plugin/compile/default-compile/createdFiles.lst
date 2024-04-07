@@ -1,0 +1,9 @@
+com/carlosjr/backproposal/proposal/ProposalController.class
+com/carlosjr/backproposal/proposal/ProposalMapper.class
+com/carlosjr/backproposal/proposal/Proposal.class
+com/carlosjr/backproposal/proposal/ProposalService.class
+com/carlosjr/backproposal/user/User.class
+com/carlosjr/backproposal/proposal/ProposalRepository.class
+com/carlosjr/backproposal/BackProposalApplication.class
+com/carlosjr/backproposal/proposal/ProposalMapperImpl.class
+com/carlosjr/backproposal/proposal/ProposalDto.class

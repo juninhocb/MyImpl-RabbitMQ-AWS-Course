@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2024-04-07T12:10:24-0300",
+    date = "2024-04-07T16:46:39-0300",
     comments = "version: 1.5.5.Final, compiler: javac, environment: Java 21.0.2 (Amazon.com Inc.)"
 )
 @Component
@@ -52,22 +52,15 @@ class ProposalMapperImpl implements ProposalMapper {
             return null;
         }
 
-        User user = null;
-        Double requestValue = null;
-        Integer paymentTerm = null;
-        Boolean approved = null;
-        String obs = null;
+        Proposal proposal = new Proposal();
 
-        user = proposalDtoToUser( proposalDto );
-        requestValue = proposalDto.requestValue();
-        paymentTerm = proposalDto.paymentTerm();
-        approved = proposalDto.approved();
-        obs = proposalDto.obs();
+        proposal.setUser( proposalDtoToUser( proposalDto ) );
+        proposal.setRequestValue( proposalDto.requestValue() );
+        proposal.setPaymentTerm( proposalDto.paymentTerm() );
+        proposal.setApproved( proposalDto.approved() );
+        proposal.setObs( proposalDto.obs() );
 
-        UUID id = null;
-        Boolean integrated = null;
-
-        Proposal proposal = new Proposal( id, requestValue, paymentTerm, approved, integrated, obs, user );
+        proposal.setIntegrated( true );
 
         return proposal;
     }
@@ -152,22 +145,13 @@ class ProposalMapperImpl implements ProposalMapper {
             return null;
         }
 
-        String name = null;
-        String lastName = null;
-        String cpf = null;
-        String phone = null;
-        Double rent = null;
+        User user = new User();
 
-        name = proposalDto.name();
-        lastName = proposalDto.lastName();
-        cpf = proposalDto.cpf();
-        phone = proposalDto.phone();
-        rent = proposalDto.rent();
-
-        UUID id = null;
-        Proposal proposal = null;
-
-        User user = new User( id, name, lastName, cpf, phone, rent, proposal );
+        user.setName( proposalDto.name() );
+        user.setLastName( proposalDto.lastName() );
+        user.setCpf( proposalDto.cpf() );
+        user.setPhone( proposalDto.phone() );
+        user.setRent( proposalDto.rent() );
 
         return user;
     }
