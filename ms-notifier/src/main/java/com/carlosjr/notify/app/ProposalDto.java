@@ -1,7 +1,5 @@
 package com.carlosjr.notify.app;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 import java.util.UUID;
 
 record ProposalDto(
